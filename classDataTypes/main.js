@@ -1,12 +1,14 @@
+"use strict";
+
 // -- PRIMITIVOS --
 
 // string: Almacena cadenas de texto
 let name = "Teresa";
 
 // number: Almacena números
-let age: 25;
-number = number + 10; // Nuevo valor: 35
-console.log(number); // Imprime 35
+let age = 18;
+age = age + 10; // Nuevo valor: 35
+console.log(age); // Imprime 35
 
 //  boolean: indican si algo es true o false
 let isUnderage = true;
