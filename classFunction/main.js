@@ -7,7 +7,7 @@ function + nombre (parámetros opcionales) {
 return o código a ejecutar
 }
 
-callback nombre función + (parámetros)
+nombre función + (parámetros) -- Para invocar la función
 */
 
 // Ejemplo: Tenemos varios artículos con diferentes precios y sus descuentos. Ahora debemos crear una función que nos calcule el valor final de cada uno
