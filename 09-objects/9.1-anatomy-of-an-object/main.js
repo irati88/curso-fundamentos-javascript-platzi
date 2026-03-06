@@ -25,11 +25,11 @@ const user = {
   },
   greeting() {
     console.log(`Hola, mi nombre es ${user.name}`); // Imprime el método greeting(): Hola, mi nombre es Bianca
-  }
+  },
 };
 
 console.log(user); // Imprime el objeto: {name: 'Bianca', age: '19', gender: 'female', address: {…}, greeting: ƒ}
-user.greeting(); 
+user.greeting();
 
 // AGREGAR PROPIEDADES AL OBJETO
 
@@ -39,11 +39,12 @@ console.log("NUEVA PROPIEDAD DEL OBJETO", user.phoneNumber); // Imprime: 902 10 
 
 // AGREGAR MÉTODOS AL OBJETO
 
-user.farewell = () => { // Mencionamos el objeto + punto + nuevo Método + arrow function
-    console.log(`Adiós, ${user.name}`); // Imprime: Adiós, BIanca
+user.farewell = () => {
+  // Mencionamos el objeto + punto + nuevo Método + arrow function
+  console.log(`Adiós, ${user.name}`); // Imprime: Adiós, BIanca
 };
 
-user.farewell(); 
+user.farewell();
 
 // BORRAR PROPIEDADES O MÉTODOS
 
