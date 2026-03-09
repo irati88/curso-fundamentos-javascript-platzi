@@ -1,6 +1,8 @@
 /*
 Clases en JavaScript: Creación y Uso de Objetos con Sintaxis Moderna
 
+CLASES: simplifican la creación de múltiples objetos con estructura similar, mejorando la organización y reutilización del código
+
 Sintaxis básica:
 
 class + Objeto {
@@ -21,7 +23,7 @@ variable.método();
 
 // Creamos la clase con su constructor
 class Book {
-  constructor(title, author, genre, publicationYear) {
+  constructor(title, author, genre, publicationYear) { // constructor: Inicializa las propiedades del objeto
     this.title = title;
     this.author = author;
     this.genre = genre;
