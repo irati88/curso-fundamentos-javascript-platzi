@@ -41,24 +41,25 @@ const usersTimeline = [
   },
 ];
 
+const username = prompt("¿Cuál es tu nombre de usuario?");
+const password = prompt("¿Cuál es tu contraseña?");
 
+// Iteramos el array usersDatabase para validar si los datos coinciden con lo que pone el usuario
+// Usaremos un bucle for usando username y password como parámetros y un if para validar los datos
 
-const myUsername = function () {
-  if (usersDatabase.username && usersDatabase.password) { 
-    console.log(`Hola ${usersDatabase.username}. ¿En qué estás pensando? ${usersTimeline.timeline}`);
-  } else {
-    console.log("Lo siento, tu nombre de usuario y contraseña son incorrectos");
+function existingUser(username, password) {
+  for (let i = 0; i < usersDatabase.length; i++) {
+    // Mientras i sea menor a la longitud de la BBDD (tiene 3 elementos) se incrementa 1
+    if (
+      usersDatabase[i].username === username && // Validar que el atributo username en la posición i coincida con lo que pone el usuario
+      usersDatabase[i].password === password // Validar que el atributo password en la posición i coincida con lo que pone el usuario
+    ) {
+      console.log("Es correcto");
+      break; // Rompemos el bucle para que no siga generando validaciones
+    } else {
+      console.log("Credenciales no válidas");
+    }
   }
-};
+}
 
-myUsername();
-
-/*
-A REVISAR:
-
-- Obtener lo que el usuario escribe en los inputs
-- Buscar en usersDatabase si existe un usuario con esos datos
-- Si existe → mostrar bienvenida + timeline
-- Si no existe → mostrar error
-
-*/
+existingUser(username, password);
