@@ -54,12 +54,22 @@ function existingUser(username, password) {
       usersDatabase[i].username === username && // Validar que el atributo username en la posición i coincida con lo que pone el usuario
       usersDatabase[i].password === password // Validar que el atributo password en la posición i coincida con lo que pone el usuario
     ) {
-      console.log("Es correcto");
+      return true;
       break; // Rompemos el bucle para que no siga generando validaciones
     } else {
-      console.log("Credenciales no válidas");
+      return false;
     }
   }
 }
 
-existingUser(username, password);
+// existingUser(username, password);
+
+function signIn(username, password) {
+  if (existingUser(username, password)) {
+    // llamamos a la función existingUser como parámetro para validar que username y password sean true
+    alert(`Bienvenido a tu cuenta ${username}`); // Mostramos mensaje de bienvenida
+    console.log(usersTimeline);
+  } else {
+    alert("Tu nombre de usuario o contraseña no son válidos");
+  }
+}
