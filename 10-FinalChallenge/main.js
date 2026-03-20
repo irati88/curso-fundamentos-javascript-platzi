@@ -55,11 +55,9 @@ function existingUser(username, password) {
       usersDatabase[i].password === password // Validar que el atributo password en la posición i coincida con lo que pone el usuario
     ) {
       return true;
-      break; // Rompemos el bucle para que no siga generando validaciones
-    } else {
-      return false;
     }
   }
+  return false; // Si dejamos el return dentro del else, el bucle se rompe si la primera validación no se cumple
 }
 
 // existingUser(username, password);
@@ -73,3 +71,5 @@ function signIn(username, password) {
     alert("Tu nombre de usuario o contraseña no son válidos");
   }
 }
+
+signIn(username, password);
