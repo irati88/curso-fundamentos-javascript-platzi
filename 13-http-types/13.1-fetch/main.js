@@ -10,7 +10,7 @@ fetch("https://jsonplaceholder.typicode.com/posts")
   .then((response) => response.json()) // Convertimos la respuesta en un json y, sin funciona
   .then((data) => console.log(data)); // Guardamos los datos en "data" e imprime los datos en un array de objetos
 
-// Peticiones en HTTP: Fetch, GET, POST y DELETE
+// Peticiones en HTTP: Fetch, GET
 
 // Variables de los elementos
 
@@ -75,3 +75,36 @@ async function fetchPosts() {
 // Generamos la interacción para que, cuando hagamos click en GET Content, aparezca visualmente en el navegador
 
 fetchButton.addEventListener("click", fetchPosts);
+
+// Peticiones en HTTP: Fetch, POST
+
+/*
+Si rellenamos los inputs de "Title" y "Content" y hacemos click en "POST Content", debería enviar un POST (información al servidor)
+Debemos evitar que cada vez que hagamos click en "POST Content" la página se refresque
+Y asegurarnos de que la info de los inputs se guarde y se envíe en el request y podamos ver la petición en el "Network" del DevTools
+*/
+
+async function createPost(title, content) {
+  const userId = Math.random(); // Variable para general de manera aleatoria el userID de cada objeto, como sale en la estructura de la API
+  const post = {
+    // Creamos la estructura de lo que se enviará al servidor
+    title: title,
+    body: content,
+    userId: userId,
+  };
+
+  // Hacemos el request llamando a la función que generará el fetch, con los parámetros (method, url, data)
+  sendHTTPrequest("POST", "https://jsonplaceholder.typicode.com/posts", post);
+}
+
+// Generamos el evento para submit
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Para evitar que la página se refresque cada vez
+  // Para acceder a los elementos del form (title y content)
+  const title = event.currentTarget.querySelector("#title").value;
+  const content = event.currentTarget.querySelector("#content").value;
+  console.log(title, content); // Mostrará el valor que añadamos en los inputs
+
+  createPost(title, content);
+});
