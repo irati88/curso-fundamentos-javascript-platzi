@@ -133,3 +133,16 @@ postList.addEventListener("click", (event) => {
     );
   }
 });
+
+// Manejo de IDs en JavaScript para eliminar artículos del DOM
+
+/*
+El ID de cada post viene directamente en la respuesta del servidor cuando hacemos una petición GET (verlo en la pestaña Network del navegador, en Response o Preview)
+
+¿Cómo se asigna el ID a cada elemento del DOM?
+Una vez que obtenemos la respuesta del servidor, generamos dinámicamente los elementos HTML con JavaScript:
+
+- Se recorre la lista de posts con un bucle
+- Por cada post, se crea un elemento <article> que funciona como contenedor.
+- A ese contenedor se le asigna el atributo id con el valor que viene de la respuesta.
+*/
