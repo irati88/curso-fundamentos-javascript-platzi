@@ -28,4 +28,4 @@ Repositorio de uso educativo y de aprendizaje personal.
 
 ## Estado del repositorio
 
-🟡 En progreso — contenido añadido a medida que avanzo en el curso.
+ ## 🏁 Finalizado - Curso completado
