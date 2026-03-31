@@ -108,3 +108,28 @@ form.addEventListener("submit", (event) => {
 
   createPost(title, content);
 });
+
+// Peticiones en HTTP: Fetch, DELETE
+
+/*
+Al trabajar con APIs, si queremos eliminar registros desde el frontend, podemos utilizar un patrón llamado "delegation pattern". Esto significa que agregaremos el evento al padre de las tarjetas (en el HTML sería "posts-container"). Para eso debemos entender cuál es el ID del elemento que queremos borrar
+*/
+
+// Generamos el evento para el click de postList
+postList.addEventListener("click", (event) => {
+  console.log(event); // Imprime el evento PointerEvent al hacer click al botón DELETE Content
+
+  // Validación de: si el elemento/target al que doy click tiene como tagName "button", ejecutamos lo siguiente
+  if (event.target.tagName === "BUTTON") {
+    // Creamos variable para obtener el ID del post
+    const postId = event.target.closest("article").id; // //necesitamos extraer el id para saber qué post hay que eliminar, a su vez tomamos el article más cercano al botón y así eliminamos el mismo
+
+    console.log(postId); // Imprime el ID del elemento al que dimos click
+
+    // Invocamos a la función que genera el fetch actualizando method a "DELETE", la url previa y para data, dentro de la url añadimos el valor dinámico de postId
+    sendHTTPrequest(
+      "DELETE",
+      `https://jsonplaceholder.typicode.com/posts/${postId}`,
+    );
+  }
+});
